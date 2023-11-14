@@ -167,7 +167,7 @@ checkpoint.restore(tf.train.latest_checkpoint(checkpoint_dir))
 
 def animize(img):
     img = np.array(img)
-    print(img.shape)
+    init_shape = img.shape
     img = preprocess_image_test(np.reshape(img,(1,img.shape[0],img.shape[1],img.shape[2])))
     img = tf.expand_dims(img,0)
     prediction = generator_f2m(img)
@@ -176,9 +176,9 @@ def animize(img):
     prediction = (prediction - np.min(prediction)) / (np.max(prediction) - np.min(prediction))
     prediction = prediction * 2 - 1
     prediction = (prediction[0]*0.5+0.5).numpy()
-    # out = tf.image.resize(image, [128, 128],method=tf.image.ResizeMethod.NEAREST_NEIGHBOR)
+    out = tf.image.resize(prediction, [init_shape[0], init_shape[1]],method=tf.image.ResizeMethod.NEAREST_NEIGHBOR)
 
-    return prediction
+    return out
 
 interface = gr.Interface(fn=animize, inputs="image", outputs="image")
 interface.launch(share=True)

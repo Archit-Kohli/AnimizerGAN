@@ -152,7 +152,7 @@ generator_f2m = Generator()
 discriminator_f = Discriminator()
 discriminator_m = Discriminator()
 
-checkpoint_dir = "/AnimizerGAN/checkpoint_dir"
+checkpoint_dir = "/"
 checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt")
 checkpoint = tf.train.Checkpoint(generator_m2f=generator_m2f,
                            generator_f2m=generator_f2m,

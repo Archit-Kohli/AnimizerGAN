@@ -167,6 +167,7 @@ checkpoint.restore(tf.train.latest_checkpoint(checkpoint_dir))
 
 def animize(img):
     img = np.array(img)
+    print(img.shape)
     img = preprocess_image_test(np.reshape(img,(1,img.shape[0],img.shape[1],img.shape[2])))
     img = tf.expand_dims(img,0)
     prediction = generator_f2m(img)

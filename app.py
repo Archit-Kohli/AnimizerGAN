@@ -178,7 +178,7 @@ def animize(img):
     prediction = (prediction[0]*0.5+0.5).numpy()
     out = tf.image.resize(prediction, [init_shape[0], init_shape[1]],method=tf.image.ResizeMethod.NEAREST_NEIGHBOR)
 
-    return out
+    return out.numpy()
 
 interface = gr.Interface(fn=animize, inputs="image", outputs="image")
 interface.launch(share=True)

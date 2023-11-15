@@ -180,5 +180,5 @@ def animize(img):
 
     return out.numpy()
 
-interface = gr.Interface(fn=animize, inputs="image", outputs="image", examples=['./example1.jpg','./example2.png','./example3.jpg','./example4.jpg'])
+interface = gr.Interface(fn=animize, inputs="image", outputs="image", examples=['./example2.jpg','./example3.png','./example1.jpg','./example4.jpg'])
 interface.launch(share=True)

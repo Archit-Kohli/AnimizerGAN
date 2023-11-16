@@ -10,4 +10,4 @@ pinned: false
 license: mit
 ---
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+A cycleGAN based project that converts human faces to anime like characters. Check out the project [here](https://huggingface.co/spaces/ArchitKohli/AnimizerGAN)
